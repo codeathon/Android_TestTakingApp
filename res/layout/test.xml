@@ -18,7 +18,7 @@ android:layout_width="wrap_content"
         android:layout_alignParentTop="true"
         android:text="EditText"
         android:textSize="18dp"
-        android:layout_marginLeft="7dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginRight="7dp"
         android:layout_marginTop="10dp" >
     </EditText>
@@ -94,18 +94,19 @@ android:layout_width="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
         android:text="Submit" />
-
+
     <TextView
+        android:background="@drawable/border_circle"
         android:id="@+id/q_no"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/Choices"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/Question"
-        android:layout_toRightOf="@+id/Question"
+        android:layout_alignBaseline="@+id/Question"
+        android:layout_alignBottom="@+id/Question"
+        android:layout_alignParentLeft="true"
         android:text="Small Text"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="#000000" />
+        android:textColor="#ffffff"
+        android:layout_marginLeft="7dp"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </RelativeLayout>
 

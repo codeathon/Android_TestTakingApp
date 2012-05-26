@@ -19,7 +19,7 @@ android:layout_width="wrap_content"
         android:textSize="18dp" 
         android:layout_marginTop="10dp"
         android:layout_marginRight="7dp"
-        android:layout_marginLeft="7dp" >
+        android:layout_marginLeft="25dp" >
     </EditText>
 
     <RadioGroup
@@ -89,10 +89,22 @@ android:layout_width="wrap_content"
         android:layout_below="@+id/a_Choices"
         android:layout_marginTop="15dp"
         android:text="Medium Text"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="7dp"
         android:layout_width="200dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000" />
+
+    <TextView
+        android:background="@drawable/border_circle"
+        android:id="@+id/a_qno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/a_Question"
+        android:layout_alignBottom="@+id/a_Question"
+        android:layout_alignParentLeft="true"
+        android:text="Small Text"
+        android:textColor="#ffffff"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </RelativeLayout>
 

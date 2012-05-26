@@ -151,6 +151,7 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
 			setValues();
 		}
 		else	{
+			--count_question;
 			button1.setEnabled(false);
 		}
 	}
