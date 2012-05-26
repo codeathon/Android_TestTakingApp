@@ -90,6 +90,26 @@ android:layout_width="wrap_content"
         android:layout_above="@+id/Submit"
         android:layout_alignParentRight="true"
         android:text="Confirm" />
+
+    <TextView
+        android:id="@+id/q_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Question"
+        android:layout_alignBottom="@+id/Question"
+        android:layout_alignParentRight="true"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/cnum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Submit"
+        android:layout_alignBottom="@+id/Submit"
+        android:layout_alignLeft="@+id/Prev"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </RelativeLayout>
 </ScrollView> 

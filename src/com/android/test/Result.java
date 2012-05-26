@@ -25,7 +25,7 @@ private void initcontrol()	{
 	Bundle bundle = this.getIntent().getExtras();
     int count = bundle.getInt("key");
     txt1=(EditText)findViewById(R.id.editText2);
-    txt1.setText(String.valueOf(count)+"/10");
+    txt1.setText(""+count+"/10");
 }
 
 

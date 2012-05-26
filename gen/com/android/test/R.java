@@ -27,9 +27,11 @@ public final class R {
         public static final int Submit=0x7f05000e;
         public static final int button1=0x7f05000b;
         public static final int button2=0x7f05000c;
+        public static final int cnum=0x7f050011;
         public static final int editText1=0x7f050009;
         public static final int editText2=0x7f05000a;
         public static final int lay=0x7f050000;
+        public static final int q_no=0x7f050010;
         public static final int widget27=0x7f05000d;
     }
     public static final class layout {

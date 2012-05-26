@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 
 public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeListener{
@@ -23,23 +24,27 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
 	private EditText txtuname;
 	private EditText txtpswd;
 	**/
+
+	int count_correct=0;
+	int count_question=0;
+	String rbnString;
+	String corrString;
+		
 	private EditText question;
+	private TextView qno;
+	private TextView cnum;
 	private RadioButton rbn1;
 	private RadioButton rbn2;
 	private RadioButton rbn3;
 	private RadioButton rbn4;
 	private int rbnSelected;
 	private String[] selectedAnswers;
-	private String rbnString;
-	private String corrString;
 	private Button button1;
 	private Button button2;
 	private Button button3;
 	private Button button4;
 	private RadioGroup rbg;
 	private String key;
-	private static int count_correct=0;
-	private static int count_question = 0;
 	
 	private DataBaseHelper dbh;
 	private SQLiteDatabase myDataBase;
@@ -52,6 +57,10 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test);
         question=(EditText)findViewById(R.id.Question);
+        
+        qno=(TextView)findViewById(R.id.q_no);
+        
+        cnum=(TextView)findViewById(R.id.cnum);
  		
  		rbn1=(RadioButton)findViewById(R.id.Choice1);
  		rbn2=(RadioButton)findViewById(R.id.Choice2);
@@ -109,29 +118,36 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
     
     
     private void rbtn1OnClick()	{
-    	rbnString = rbn1.getText().toString();
+    	rbnString = (String) rbn1.getText();
+    	if(rbnString.equals(corrString))
+			++count_correct;
     	button1.setEnabled(true);
 		button2.setEnabled(false);
 		button3.setEnabled(true);
 	}
 	
     private void rbtn2OnClick()	{
-    	rbnString = rbn1.getText().toString();
+    	rbnString = (String) rbn2.getText();
+    	if(rbnString.equals(corrString))
+			++count_correct;
     	button1.setEnabled(true);
 		button2.setEnabled(false);
 		button3.setEnabled(true);
 	}
     
     private void rbtn3OnClick()	{
-    	rbnString = rbn1.getText().toString();
+    	rbnString = (String) rbn3.getText();
+    	if(rbnString.equals(corrString))
+			++count_correct;
     	button1.setEnabled(true);
 		button2.setEnabled(false);
 		button3.setEnabled(true);
 	}
     
     private void rbtn4OnClick()	{
-    	rbnString = rbn1.getText().toString();
-    	selectedAnswers[count_question] = rbnString;
+    	rbnString = (String) rbn4.getText();
+    	if(rbnString.equals(corrString))
+			++count_correct;
     	button1.setEnabled(true);
 		button2.setEnabled(false);
 		button3.setEnabled(true);
@@ -148,19 +164,20 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
 	}
 	
 	private void nextOnClick()	{
-		if(!c.isLast() && c.getCount()!=0) {
-			if(rbnString.equals(corrString))
-				++count_correct;
-			c.moveToNext();
-			setNewQuestion();
-			setValues();
-		}
-		else	{
-			button1.setEnabled(true);
-			button2.setEnabled(false);
-			button3.setEnabled(false);
-			button4.setEnabled(true);
-		}
+		
+			
+			cnum.setText(""+count_correct);
+			if(c.isLast()){
+				button1.setEnabled(true);
+				button2.setEnabled(false);
+				button3.setEnabled(false);
+				button4.setEnabled(true);
+			}
+			else {
+				c.moveToNext();
+				setNewQuestion();
+				setValues();
+			}
 	}
 	
 	private void confirmOnClick()	{
@@ -193,6 +210,11 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
 	
 	// Set the values of the display elements
 	private void setValues()	{
+		
+		rbnString = "";
+		corrString = "";
+		count_question++;
+		qno.setText(""+count_question);
 		question.setText(c.getString(c.getColumnIndex("Question")).toString());
 		rbn1.setText(c.getString(c.getColumnIndex("Choice1")).toString());
 		rbn2.setText(c.getString(c.getColumnIndex("Choice2")).toString());
@@ -203,8 +225,6 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
 	
 	// Set a new Question
 	private void setNewQuestion()	{
-		
-		count_question++;
 		
 		rbn1.setEnabled(true);
 		rbn1.setChecked(false);
