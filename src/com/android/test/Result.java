@@ -16,6 +16,8 @@ public class Result extends Activity {
 	private Button vAnswers;
 	private Button exit;
 
+	String[] answers;
+	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.outcome);
@@ -40,7 +42,6 @@ public class Result extends Activity {
 
 	private void vansOnClick() {
 		Bundle bundle2 = this.getIntent().getExtras();
-		String[] answers;
 		answers = bundle2.getStringArray("selected_answer");
 		
 		Intent myIntent = new Intent();
@@ -52,7 +53,6 @@ public class Result extends Activity {
 	}
 	
 	private void exitOnClick() {
-		
 	}
 
 }

@@ -34,6 +34,8 @@ public class Answers extends Activity {
 	
 	private Button button1;
 	private Button button2;
+	private Button button3;
+	
 	private RadioGroup rbg;
 	private Cursor c;	
 	private String[] answers;
@@ -60,11 +62,13 @@ public class Answers extends Activity {
 		
 		button2=(Button)findViewById(R.id.a_Next);
 		
+		button3=(Button)findViewById(R.id.a_Exit);
+		
 		button1.setOnClickListener(new Button.OnClickListener() { public void onClick(View v) { prevOnClick(); }});
  		button2.setOnClickListener(new Button.OnClickListener() { public void onClick(View v) { nextOnClick(); }});
-
+ 		button2.setOnClickListener(new Button.OnClickListener() { public void onClick(View v) { exitOnClick(); }});
+ 		
  		Bundle bundle2 = this.getIntent().getExtras();
-		answers = new String[20];
 		answers = bundle2.getStringArray("selected_answer");
  		
  		
@@ -110,6 +114,9 @@ public class Answers extends Activity {
 		}
 	}
 	
+	private void exitOnClick() {
+		
+	}
 	private void setValues()	{
 		++count_question;
 		question.setText(c.getString(c.getColumnIndex("Question")).toString());

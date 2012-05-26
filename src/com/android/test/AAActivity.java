@@ -32,7 +32,6 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
 		
 	private EditText question;
 	private TextView qno;
-	private TextView cnum;
 	private RadioButton rbn1;
 	private RadioButton rbn2;
 	private RadioButton rbn3;
@@ -48,7 +47,7 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
 	private SQLiteDatabase myDataBase;
 	
 
-    String[] selectedAnswers;
+    String[] selectedAnswers = new String[11];
 	
 	private Cursor c;	
 	
@@ -63,7 +62,6 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
         
         qno=(TextView)findViewById(R.id.q_no);
         
-        cnum=(TextView)findViewById(R.id.cnum);
  		
  		rbn1=(RadioButton)findViewById(R.id.Choice1);
  		rbn2=(RadioButton)findViewById(R.id.Choice2);
@@ -204,7 +202,6 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
 		myIntent.putExtras(bundle);
 		startActivityForResult(myIntent,0);
 	}
-	
 	
 	// Set the values of the display elements
 	private void setValues()	{
