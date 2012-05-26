@@ -118,40 +118,28 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
     }
     
     private void rbtn1OnClick()	{
-    	rbnString = (String) rbn1.getText();
-    	selectedAnswers[count_question] = rbnString;
-    	if(rbnString.equals(corrString))
-			++count_correct;
+    	
     	button1.setEnabled(true);
 		button2.setEnabled(false);
 		button3.setEnabled(true);
 	}
 	
     private void rbtn2OnClick()	{
-    	rbnString = (String) rbn2.getText();
-    	selectedAnswers[count_question] = rbnString;
-    	if(rbnString.equals(corrString))
-			++count_correct;
+    	
     	button1.setEnabled(true);
 		button2.setEnabled(false);
 		button3.setEnabled(true);
 	}
     
     private void rbtn3OnClick()	{
-    	rbnString = (String) rbn3.getText();
-    	selectedAnswers[count_question] = rbnString;
-    	if(rbnString.equals(corrString))
-			++count_correct;
+    	
     	button1.setEnabled(true);
 		button2.setEnabled(false);
 		button3.setEnabled(true);
 	}
     
     private void rbtn4OnClick()	{
-    	rbnString = (String) rbn4.getText();
-    	selectedAnswers[count_question] = rbnString;
-    	if(rbnString.equals(corrString))
-			++count_correct;
+    	
     	button1.setEnabled(true);
 		button2.setEnabled(false);
 		button3.setEnabled(true);
@@ -168,6 +156,26 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
 	}
 	
 	private void nextOnClick()	{		
+
+			if(rbn1.isChecked()) {
+				rbnString = (String) rbn1.getText();
+			   	selectedAnswers[count_question] = rbnString;
+			}
+			if(rbn2.isChecked()) {
+				rbnString = (String) rbn2.getText();
+			   	selectedAnswers[count_question] = rbnString;
+			}
+			if(rbn3.isChecked()) {
+				rbnString = (String) rbn3.getText();
+			   	selectedAnswers[count_question] = rbnString;
+			}
+			if(rbn4.isChecked()) {
+				rbnString = (String) rbn4.getText();
+			   	selectedAnswers[count_question] = rbnString;
+			}
+		    if(rbnString.equals(corrString)) {
+		    	++count_correct;
+		    }
 			if(c.isLast()){
 				button4.setVisibility(View.VISIBLE);
 				button1.setEnabled(true);
@@ -181,12 +189,12 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
 				setNewQuestion();
 				setValues();
 			}
-	}
+		}
+	
 	
 	private void confirmOnClick()	{
 		if(button3.getText().toString() == "Confirm") {
 
-			resetRadio();
 			button1.setEnabled(false);
 			button2.setEnabled(true);
 			button3.setText("Cancel");
