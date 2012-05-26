@@ -15,23 +15,31 @@ public final class R {
         public static final int viewer=0x7f020001;
     }
     public static final class id {
-        public static final int Choice1=0x7f050003;
-        public static final int Choice2=0x7f050004;
-        public static final int Choice3=0x7f050005;
-        public static final int Choice4=0x7f050006;
-        public static final int Choices=0x7f050002;
-        public static final int Confirm=0x7f05000f;
-        public static final int Next=0x7f050008;
-        public static final int Prev=0x7f050007;
-        public static final int Question=0x7f050001;
-        public static final int Submit=0x7f05000e;
-        public static final int button1=0x7f05000b;
-        public static final int button2=0x7f05000c;
-        public static final int cnum=0x7f050011;
+        public static final int Choice1=0x7f050010;
+        public static final int Choice2=0x7f050011;
+        public static final int Choice3=0x7f050012;
+        public static final int Choice4=0x7f050013;
+        public static final int Choices=0x7f05000f;
+        public static final int Confirm=0x7f050017;
+        public static final int Next=0x7f050015;
+        public static final int Prev=0x7f050014;
+        public static final int Question=0x7f05000e;
+        public static final int Submit=0x7f050016;
+        public static final int a_Choice1=0x7f050003;
+        public static final int a_Choice2=0x7f050004;
+        public static final int a_Choice3=0x7f050005;
+        public static final int a_Choice4=0x7f050006;
+        public static final int a_Choices=0x7f050002;
+        public static final int a_Next=0x7f050008;
+        public static final int a_Prev=0x7f050007;
+        public static final int a_Question=0x7f050001;
+        public static final int cnum=0x7f050018;
         public static final int editText1=0x7f050009;
         public static final int editText2=0x7f05000a;
+        public static final int exit=0x7f05000b;
         public static final int lay=0x7f050000;
-        public static final int q_no=0x7f050010;
+        public static final int q_no=0x7f050019;
+        public static final int vans=0x7f05000c;
         public static final int widget27=0x7f05000d;
     }
     public static final class layout {

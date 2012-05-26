@@ -2,16 +2,18 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="wrap_content"
     android:layout_height="wrap_content" >   "
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/widget27"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
-
-    <EditText
+    android:layout_height="459dp"
+    android:background="@drawable/bg" >
+    
+        <EditText
         android:id="@+id/Question"
         android:layout_width="400px"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:text="EditText"
         android:textSize="18sp" >
@@ -90,6 +92,19 @@ android:layout_width="wrap_content"
         android:layout_above="@+id/Submit"
         android:layout_alignParentRight="true"
         android:text="Confirm" />
+
+
+
+    
+    <TextView
+        android:id="@+id/cnum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Submit"
+        android:layout_alignBottom="@+id/Submit"
+        android:layout_alignLeft="@+id/Prev"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
         android:id="@+id/q_no"
@@ -98,16 +113,7 @@ android:layout_width="wrap_content"
         android:layout_alignBaseline="@+id/Question"
         android:layout_alignBottom="@+id/Question"
         android:layout_alignParentRight="true"
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
-        android:id="@+id/cnum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/Submit"
-        android:layout_alignBottom="@+id/Submit"
-        android:layout_alignLeft="@+id/Prev"
+        android:layout_toRightOf="@+id/Question"
         android:text="Small Text"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
