@@ -1,6 +1,5 @@
 package com.android.test;
 
-//import junit.framework.Test;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -20,10 +19,6 @@ import android.widget.TextView;
 
 
 public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeListener{
-	/**private Button btnlogin;
-	private EditText txtuname;
-	private EditText txtpswd;
-	**/
 
 	int count_correct=0;
 	int count_question=1;
@@ -87,7 +82,7 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
  		rbn2.setOnClickListener(new RadioButton.OnClickListener() { public void onClick(View v) { rbtn2OnClick();}});
  		rbn3.setOnClickListener(new RadioButton.OnClickListener() { public void onClick(View v) { rbtn3OnClick();}});
  		rbn4.setOnClickListener(new RadioButton.OnClickListener() { public void onClick(View v) { rbtn4OnClick();}});	
- 	//	rbg.setOnCheckedChangeListener(this);
+
  		
  		button1.setOnClickListener(new Button.OnClickListener() { public void onClick(View v) { prevOnClick(); }});
  		button2.setOnClickListener(new Button.OnClickListener() { public void onClick(View v) { nextOnClick(); }});
@@ -245,13 +240,6 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
 		button2.setEnabled(false);
 		button3.setText("Confirm");
 		button3.setEnabled(true);
-	}
-	
-	private void resetRadio()	{
-		rbn1.setEnabled(false);
-		rbn2.setEnabled(false);
-		rbn3.setEnabled(false);
-		rbn4.setEnabled(false);
 	}
 
 	public void onCheckedChanged(RadioGroup arg0, int arg1) {
