@@ -29,6 +29,9 @@ public class Answers extends Activity {
 	private SQLiteDatabase myDataBase;
 	
 	private EditText question;
+	
+	private TextView msg;
+	
 	private RadioButton rbn1;
 	private RadioButton rbn2;
 	private RadioButton rbn3;
@@ -44,7 +47,7 @@ public class Answers extends Activity {
 	
 
 	int count_correct=0;
-	int count_question=0;
+	int count_question=1;
 	String rbnString;
 	String corrString;
 	
@@ -52,8 +55,9 @@ public class Answers extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.answers);
 		question=(EditText)findViewById(R.id.a_Question);
-		
-		
+
+		msg=(TextView)findViewById(R.id.a_msg);
+
 		rbn1=(RadioButton)findViewById(R.id.a_Choice1);
 		rbn2=(RadioButton)findViewById(R.id.a_Choice2);
 		rbn3=(RadioButton)findViewById(R.id.a_Choice3);
@@ -111,6 +115,8 @@ public class Answers extends Activity {
 //			button2.setEnabled(false);
 //		}
 //		else {
+		++count_question;
+
 			c.moveToNext();
 			setValues();
 		
@@ -126,7 +132,6 @@ public class Answers extends Activity {
 		rbn3.setTextColor(Color.BLACK);
 		rbn4.setTextColor(Color.BLACK);
 
-		++count_question;
 		question.setText(c.getString(c.getColumnIndex("Question")).toString());
 		rbn1.setText(c.getString(c.getColumnIndex("Choice1")).toString());
 		rbn2.setText(c.getString(c.getColumnIndex("Choice2")).toString());
@@ -137,47 +142,80 @@ public class Answers extends Activity {
 		
 			if(rbn1.getText().toString().equals(answers[count_question])) {
 				rbn1.setTextColor(Color.RED);
-				if(rbn1.getText().toString().equals(corrString))
+				if(rbn1.getText().toString().equals(corrString)) {
 					rbn1.setTextColor(Color.GREEN);
-				if(rbn2.getText().toString().equals(corrString))
+					msg.setText("Congratulations ! You got this one right !");
+				}	
+				if(rbn2.getText().toString().equals(corrString)) {
 					rbn2.setTextColor(Color.GREEN);
-				if(rbn3.getText().toString().equals(corrString))
+					msg.setText("Oops ! Sorry, you got this one wrong !");
+				}
+				if(rbn3.getText().toString().equals(corrString)) {
 					rbn3.setTextColor(Color.GREEN);
-				if(rbn4.getText().toString().equals(corrString))
+					msg.setText("Oops ! Sorry, you got this one wrong !");
+				}	
+				if(rbn4.getText().toString().equals(corrString)) {
 					rbn4.setTextColor(Color.GREEN);
+					msg.setText("Oops ! Sorry, you got this one wrong !");
+				}
 			}
 			if(rbn2.getText().toString().equals(answers[count_question])) {
 				rbn2.setTextColor(Color.RED);
-				if(rbn1.getText().toString().equals(corrString))
+				if(rbn1.getText().toString().equals(corrString)) {
 					rbn1.setTextColor(Color.GREEN);
-				if(rbn2.getText().toString().equals(corrString))
+					msg.setText("Oops ! Sorry, you got this one wrong !");
+				}
+					
+				if(rbn2.getText().toString().equals(corrString)) {
 					rbn2.setTextColor(Color.GREEN);
-				if(rbn3.getText().toString().equals(corrString))
+					msg.setText("Congratulations ! You got this one right !");
+				}	
+				if(rbn3.getText().toString().equals(corrString)) {
 					rbn3.setTextColor(Color.GREEN);
-				if(rbn4.getText().toString().equals(corrString))
+					msg.setText("Oops ! Sorry, you got this one wrong !");
+				}
+				if(rbn4.getText().toString().equals(corrString)) {
 					rbn4.setTextColor(Color.GREEN);
+					msg.setText("Oops ! Sorry, you got this one wrong !");
+				}
 			}
 			if(rbn3.getText().toString().equals(answers[count_question])) {
 				rbn3.setTextColor(Color.RED);
-				if(rbn1.getText().toString().equals(corrString))
+				if(rbn1.getText().toString().equals(corrString)) {
 					rbn1.setTextColor(Color.GREEN);
-				if(rbn2.getText().toString().equals(corrString))
+					msg.setText("Oops ! Sorry, you got this one wrong !");
+				}
+				if(rbn2.getText().toString().equals(corrString)) {
 					rbn2.setTextColor(Color.GREEN);
-				if(rbn3.getText().toString().equals(corrString))
+					msg.setText("Oops ! Sorry, you got this one wrong !");
+				}
+				if(rbn3.getText().toString().equals(corrString)) {
 					rbn3.setTextColor(Color.GREEN);
-				if(rbn4.getText().toString().equals(corrString))
+					msg.setText("Congratulations ! You got this one right !");
+				}
+				if(rbn4.getText().toString().equals(corrString)) {
 					rbn4.setTextColor(Color.GREEN);
+					msg.setText("Oops ! Sorry, you got this one wrong !");
+				}
 			}
 			if(rbn4.getText().toString().equals(answers[count_question])) {
 				rbn4.setTextColor(Color.RED);
-				if(rbn1.getText().toString().equals(corrString))
+				if(rbn1.getText().toString().equals(corrString)) {
 					rbn1.setTextColor(Color.GREEN);
-				if(rbn2.getText().toString().equals(corrString))
+					msg.setText("Oops ! Sorry, you got this one wrong !");
+				}
+				if(rbn2.getText().toString().equals(corrString)) {
 					rbn2.setTextColor(Color.GREEN);
-				if(rbn3.getText().toString().equals(corrString))
+					msg.setText("Oops ! Sorry, you got this one wrong !");
+				}
+				if(rbn3.getText().toString().equals(corrString)) {
 					rbn3.setTextColor(Color.GREEN);
-				if(rbn4.getText().toString().equals(corrString))
+					msg.setText("Oops ! Sorry, you got this one wrong !");
+				}
+				if(rbn4.getText().toString().equals(corrString)) {
 					rbn4.setTextColor(Color.GREEN);
+					msg.setText("Congratulations ! You got this one right !");
+				}	
 			}
 		}
 	}

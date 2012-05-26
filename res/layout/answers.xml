@@ -10,15 +10,16 @@ android:layout_width="wrap_content"
     android:background="@drawable/bg" >
 
     <EditText
-        android:id="@+id/a_Question"
         style="@style/question"
-        android:layout_width="400px"
+        android:id="@+id/a_Question"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:text="EditText"
         android:textSize="18dp" 
-        android:layout_marginTop="10dp" >
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginLeft="7dp" >
     </EditText>
 
     <RadioGroup
@@ -67,11 +68,11 @@ android:layout_width="wrap_content"
 <Button
         style="@style/button"
         android:id="@+id/a_Next"
-        android:layout_below="@+id/a_Choices"
+        android:layout_below="@+id/a_msg"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:layout_toRightOf="@+id/a_Prev"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="45dp"
         android:text="Next" />    
     
     <Button
@@ -81,6 +82,17 @@ android:layout_width="wrap_content"
         android:layout_alignBottom="@+id/a_Next"
         android:layout_alignParentRight="true"
         android:text="Exit" />
+
+    <TextView
+        android:id="@+id/a_msg"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/a_Choices"
+        android:layout_marginTop="15dp"
+        android:text="Medium Text"
+        android:layout_marginLeft="15dp"
+        android:layout_width="200dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
 
 </RelativeLayout>
 

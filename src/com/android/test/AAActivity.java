@@ -26,7 +26,7 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
 	**/
 
 	int count_correct=0;
-	int count_question=0;
+	int count_question=1;
 	String rbnString;
 	String corrString;
 		
@@ -47,7 +47,7 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
 	private SQLiteDatabase myDataBase;
 	
 
-    String[] selectedAnswers = new String[11];
+    String[] selectedAnswers = new String[12];
 	
 	private Cursor c;	
 	
@@ -93,6 +93,7 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
  		button2.setOnClickListener(new Button.OnClickListener() { public void onClick(View v) { nextOnClick(); }});
  		button3.setOnClickListener(new Button.OnClickListener() { public void onClick(View v) { confirmOnClick(); }});
  		button4.setOnClickListener(new Button.OnClickListener() { public void onClick(View v) { submitOnClick(); }});
+        button4.setVisibility(View.GONE);
         
         initcontrol();
     }
@@ -168,12 +169,14 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
 	
 	private void nextOnClick()	{		
 			if(c.isLast()){
+				button4.setVisibility(View.VISIBLE);
 				button1.setEnabled(true);
 				button2.setEnabled(false);
 				button3.setEnabled(false);
 				button4.setEnabled(true);
 			}
 			else {
+				++count_question;
 				c.moveToNext();
 				setNewQuestion();
 				setValues();
@@ -205,7 +208,6 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
 	
 	// Set the values of the display elements
 	private void setValues()	{
-		++count_question;
 		qno.setText(""+count_question);
 		question.setText(c.getString(c.getColumnIndex("Question")).toString());
 		rbn1.setText(c.getString(c.getColumnIndex("Choice1")).toString());
@@ -247,18 +249,4 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
 		// TODO Auto-generated method stub
 		
 	}
-
-    /**
-    private void login() {
-    	//System.out.println("In login, outside if");
-    //	if ((txtuname.getText().toString()) == ("mainapure") && (txtpswd.getText().toString()) == ("mainapure")) {
-			System.out.println("In login");
-    		Intent myIntent = new Intent();
-    		myIntent.setClass(this, Test.class);
-    		startActivity(myIntent);
-    	//}
-			//AAActivity.this.startActivity(myIntent);
-    	
-    	
-    }**/
 }
