@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.android.test;
 
 import android.app.Activity;
@@ -43,7 +40,7 @@ public class Result extends Activity {
 
 	private void vansOnClick() {
 		Bundle bundle2 = this.getIntent().getExtras();
-		String[] answers = new String[20];
+		String[] answers;
 		answers = bundle2.getStringArray("selected_answer");
 		
 		Intent myIntent = new Intent();

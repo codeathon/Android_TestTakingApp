@@ -36,7 +36,7 @@ public class Answers extends Activity {
 	private Button button2;
 	private RadioGroup rbg;
 	private Cursor c;	
-	private String[] answers = new String[20];
+	private String[] answers;
 	
 
 	int count_correct=0;

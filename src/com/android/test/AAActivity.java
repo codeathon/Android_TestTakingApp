@@ -48,7 +48,7 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
 	private SQLiteDatabase myDataBase;
 	
 
-    String[] selectedAnswers = new String[20];
+    String[] selectedAnswers;
 	
 	private Cursor c;	
 	
