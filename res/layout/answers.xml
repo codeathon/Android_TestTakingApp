@@ -1,22 +1,26 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="wrap_content"
     android:layout_height="wrap_content" >   "
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/lay"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="459dp"
     android:background="@drawable/bg" >
 
     <EditText
-        style="@style/question"
         android:id="@+id/a_Question"
+        style="@style/question"
         android:layout_width="400px"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:text="EditText"
-        android:textSize="18dp" >
+        android:textSize="18dp" 
+        android:layout_marginTop="10dp" >
     </EditText>
+
     <RadioGroup
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/a_Choices"
@@ -24,30 +28,30 @@ android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/a_Question"
-        android:orientation="vertical"
-        android:layout_marginTop="15dp" >
+        android:layout_marginTop="15dp"
+        android:orientation="vertical" >
 
         <RadioButton
-            style="@style/choice"
             android:id="@+id/a_Choice1"
+            style="@style/choice"
             android:text="RadioButton" >
         </RadioButton>
 
         <RadioButton
-            style="@style/choice"
             android:id="@+id/a_Choice2"
+            style="@style/choice"
             android:text="RadioButton" >
         </RadioButton>
 
         <RadioButton
-            style="@style/choice"
             android:id="@+id/a_Choice3"
+            style="@style/choice"
             android:text="RadioButton" >
         </RadioButton>
 
         <RadioButton
-            style="@style/choice"
             android:id="@+id/a_Choice4"
+            style="@style/choice"
             android:text="RadioButton" >
         </RadioButton>
     </RadioGroup>
@@ -55,28 +59,29 @@ android:layout_width="wrap_content"
     <Button
         style="@style/button"
         android:id="@+id/a_Prev"
-        android:layout_alignParentLeft="true"
+        android:layout_alignBaseline="@+id/a_Next"
         android:layout_below="@+id/a_Choices"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
         android:text="Prev" />
-
-
-        <Button
+<Button
         style="@style/button"
         android:id="@+id/a_Next"
-		android:layout_toRightOf="@+id/a_Next"
         android:layout_below="@+id/a_Choices"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:text="Next" />
-
-        <Button
-        	style="@style/button"
-            android:id="@+id/a_Exit"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:text="Exit"/>
+        android:layout_toRightOf="@+id/a_Prev"
+        android:layout_marginLeft="10dp"
+        android:text="Next" />    
+    
+    <Button
+        style="@style/button"
+        android:id="@+id/a_Exit"
+        android:layout_alignBaseline="@+id/a_Next"
+        android:layout_alignBottom="@+id/a_Next"
+        android:layout_alignParentRight="true"
+        android:text="Exit" />
 
 </RelativeLayout>
+
 </ScrollView> 

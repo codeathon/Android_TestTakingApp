@@ -52,7 +52,6 @@ android:layout_width="wrap_content"
         <RadioButton
             style="@style/choice"
             android:id="@+id/Choice4"
-            style="@style/choice"
             android:text="RadioButton" >
         </RadioButton>
     </RadioGroup>

@@ -9,12 +9,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 /**
  * @author rohit
@@ -51,6 +53,7 @@ public class Answers extends Activity {
 		setContentView(R.layout.answers);
 		question=(EditText)findViewById(R.id.a_Question);
 		
+		
 		rbn1=(RadioButton)findViewById(R.id.a_Choice1);
 		rbn2=(RadioButton)findViewById(R.id.a_Choice2);
 		rbn3=(RadioButton)findViewById(R.id.a_Choice3);
@@ -66,11 +69,10 @@ public class Answers extends Activity {
 		
 		button1.setOnClickListener(new Button.OnClickListener() { public void onClick(View v) { prevOnClick(); }});
  		button2.setOnClickListener(new Button.OnClickListener() { public void onClick(View v) { nextOnClick(); }});
- 		button2.setOnClickListener(new Button.OnClickListener() { public void onClick(View v) { exitOnClick(); }});
+ 		button3.setOnClickListener(new Button.OnClickListener() { public void onClick(View v) { exitOnClick(); }});
  		
- 		Bundle bundle2 = this.getIntent().getExtras();
-		answers = bundle2.getStringArray("selected_answer");
- 		
+ 		Bundle bundle3 = this.getIntent().getExtras();
+		answers = bundle3.getStringArray("answers");
  		
  		initcontrol();
 	}
@@ -94,30 +96,36 @@ public class Answers extends Activity {
     
 	
 	private void prevOnClick()	{
-		if(!c.isFirst())	{
+//		if(!c.isFirst())	{
 			c.moveToPrevious();
 			setValues();
+//		}
+//		else	{
+//			button1.setEnabled(false);
 		}
-		else	{
-			button1.setEnabled(false);
-		}
-	}
+	
 
 	private void nextOnClick()	{		
-		if(c.isLast()){
-			button1.setEnabled(true);
-			button2.setEnabled(false);
-		}
-		else {
+//		if(c.isLast()){
+//			button1.setEnabled(true);
+//			button2.setEnabled(false);
+//		}
+//		else {
 			c.moveToNext();
 			setValues();
-		}
+		
 	}
 	
 	private void exitOnClick() {
 		
 	}
 	private void setValues()	{
+		
+		rbn1.setTextColor(Color.BLACK);
+		rbn2.setTextColor(Color.BLACK);
+		rbn3.setTextColor(Color.BLACK);
+		rbn4.setTextColor(Color.BLACK);
+
 		++count_question;
 		question.setText(c.getString(c.getColumnIndex("Question")).toString());
 		rbn1.setText(c.getString(c.getColumnIndex("Choice1")).toString());
@@ -125,5 +133,51 @@ public class Answers extends Activity {
 		rbn3.setText(c.getString(c.getColumnIndex("Choice3")).toString());
 		rbn4.setText(c.getString(c.getColumnIndex("Choice4")).toString());
 		corrString =(c.getString(c.getColumnIndex("Correct")).toString());
+		
+		
+			if(rbn1.getText().toString().equals(answers[count_question])) {
+				rbn1.setTextColor(Color.RED);
+				if(rbn1.getText().toString().equals(corrString))
+					rbn1.setTextColor(Color.GREEN);
+				if(rbn2.getText().toString().equals(corrString))
+					rbn2.setTextColor(Color.GREEN);
+				if(rbn3.getText().toString().equals(corrString))
+					rbn3.setTextColor(Color.GREEN);
+				if(rbn4.getText().toString().equals(corrString))
+					rbn4.setTextColor(Color.GREEN);
+			}
+			if(rbn2.getText().toString().equals(answers[count_question])) {
+				rbn2.setTextColor(Color.RED);
+				if(rbn1.getText().toString().equals(corrString))
+					rbn1.setTextColor(Color.GREEN);
+				if(rbn2.getText().toString().equals(corrString))
+					rbn2.setTextColor(Color.GREEN);
+				if(rbn3.getText().toString().equals(corrString))
+					rbn3.setTextColor(Color.GREEN);
+				if(rbn4.getText().toString().equals(corrString))
+					rbn4.setTextColor(Color.GREEN);
+			}
+			if(rbn3.getText().toString().equals(answers[count_question])) {
+				rbn3.setTextColor(Color.RED);
+				if(rbn1.getText().toString().equals(corrString))
+					rbn1.setTextColor(Color.GREEN);
+				if(rbn2.getText().toString().equals(corrString))
+					rbn2.setTextColor(Color.GREEN);
+				if(rbn3.getText().toString().equals(corrString))
+					rbn3.setTextColor(Color.GREEN);
+				if(rbn4.getText().toString().equals(corrString))
+					rbn4.setTextColor(Color.GREEN);
+			}
+			if(rbn4.getText().toString().equals(answers[count_question])) {
+				rbn4.setTextColor(Color.RED);
+				if(rbn1.getText().toString().equals(corrString))
+					rbn1.setTextColor(Color.GREEN);
+				if(rbn2.getText().toString().equals(corrString))
+					rbn2.setTextColor(Color.GREEN);
+				if(rbn3.getText().toString().equals(corrString))
+					rbn3.setTextColor(Color.GREEN);
+				if(rbn4.getText().toString().equals(corrString))
+					rbn4.setTextColor(Color.GREEN);
+			}
+		}
 	}
-}
