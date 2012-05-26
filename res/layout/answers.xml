@@ -1,0 +1,78 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >   "
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lay"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <EditText
+        android:id="@+id/Question"
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="EditText"
+        android:textSize="18sp" >
+    </EditText>
+    <RadioGroup
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/Choices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/Question"
+        android:orientation="vertical" >
+
+        <RadioButton
+            android:id="@+id/Choice1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/Choice2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/Choice3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/Choice4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RadioButton" >
+        </RadioButton>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/Prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/Choices"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:text="Prev" />
+
+
+        <Button
+        android:id="@+id/Next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_toRightOf="@+id/Next"
+        android:layout_below="@+id/Choices"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="Next" />
+
+</RelativeLayout>
+</ScrollView> 
