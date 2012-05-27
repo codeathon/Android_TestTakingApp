@@ -115,7 +115,8 @@ android:layout_width="wrap_content"
         android:layout_above="@+id/a_Exit"
         android:layout_toRightOf="@+id/a_msg"
         android:layout_below="@+id/a_Choices"
-        android:background="@drawable/bg" />
+        android:background="@drawable/bg"
+        android:layout_marginBottom="10dp"/>
 
 </RelativeLayout>
 

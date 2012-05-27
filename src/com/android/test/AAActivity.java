@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -51,31 +52,41 @@ public class AAActivity extends Activity implements RadioGroup.OnCheckedChangeLi
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.test);
-        
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/rough_typewriter_bold.otf");
         
         question=(EditText)findViewById(R.id.Question);
-        
+        question.setTypeface(font);
         qno=(TextView)findViewById(R.id.q_no);
         
- 		
  		rbn1=(RadioButton)findViewById(R.id.Choice1);
+ 		rbn1.setTypeface(font);
+ 		
  		rbn2=(RadioButton)findViewById(R.id.Choice2);
+ 		rbn2.setTypeface(font);
+ 		
  		rbn3=(RadioButton)findViewById(R.id.Choice3);
+ 		rbn3.setTypeface(font);
+ 		
  		rbn4=(RadioButton)findViewById(R.id.Choice4);
+ 		rbn4.setTypeface(font);
  		
  		rbg=(RadioGroup)findViewById(R.id.Choices);
  		
  		button1=(Button)findViewById(R.id.Prev);
  		button1.setText("Prev");
+// 		button1.setTypeface(font);
  		
  		button2=(Button)findViewById(R.id.Next);
  		button2.setText("Next");
+ //		button2.setTypeface(font);
  		
  		button3=(Button)findViewById(R.id.Confirm);
  		button3.setText("Confirm");
+ 	//	button3.setTypeface(font);
  		
  		button4=(Button)findViewById(R.id.Submit);
- 		button4.setText("Submit");	
+ 		button4.setText("Submit");
+ 		//button4.setTypeface(font);	
  		button4.setEnabled(false);
  		
  		rbn1.setOnClickListener(new RadioButton.OnClickListener() { public void onClick(View v) { rbtn1OnClick();}});
