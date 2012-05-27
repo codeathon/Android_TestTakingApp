@@ -50,8 +50,6 @@ public class Answers extends Activity {
 	
 	private TextView qno;
 
-	
-	
 	int count_correct=0;
 	int count_question=1;
 	String rbnString;

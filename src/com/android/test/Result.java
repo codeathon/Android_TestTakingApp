@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 /*
  * @author rohit
@@ -13,6 +14,7 @@ import android.widget.EditText;
 
 public class Result extends Activity {
 	private EditText txt1;
+	private TextView msg;
 	private Button vAnswers;
 	private Button exit;
 
@@ -30,6 +32,8 @@ public class Result extends Activity {
 		
 		vAnswers=(Button)findViewById(R.id.vans);
 		
+		msg=(TextView)findViewById(R.id.res_msg);
+		
 		vAnswers.setOnClickListener(new Button.OnClickListener() { public void onClick(View v) { vansOnClick(); }});
 	
 		exit.setOnClickListener(new Button.OnClickListener() { public void onClick(View v) { exitOnClick(); }});
@@ -38,6 +42,15 @@ public class Result extends Activity {
 		int count = bundle.getInt("key");
 		txt1=(EditText)findViewById(R.id.editText2);
 		txt1.setText(""+count+"/10");
+		
+		if(7<=count && count<10)
+			msg.setText("Excellent Score");
+		if(count==10)
+			msg.setText("Perfect Score");
+		if(count >=5 && count< 7)
+			msg.setText("You could do better than that");
+		if(count < 5)
+			msg.setText("You need to improve");
 	}
 
 	private void vansOnClick() {
